@@ -1,0 +1,97 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+@layer base {
+  :root {
+    --background: 220 20% 8%;
+    --foreground: 210 20% 92%;
+
+    --card: 220 18% 12%;
+    --card-foreground: 210 20% 92%;
+
+    --popover: 220 18% 12%;
+    --popover-foreground: 210 20% 92%;
+
+    --primary: 160 80% 45%;
+    --primary-foreground: 220 20% 8%;
+
+    --secondary: 220 15% 18%;
+    --secondary-foreground: 210 20% 85%;
+
+    --muted: 220 15% 15%;
+    --muted-foreground: 215 15% 55%;
+
+    --accent: 200 85% 55%;
+    --accent-foreground: 220 20% 8%;
+
+    --destructive: 0 72% 55%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 220 15% 20%;
+    --input: 220 15% 20%;
+    --ring: 160 80% 45%;
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 220 18% 10%;
+    --sidebar-foreground: 210 20% 85%;
+    --sidebar-primary: 160 80% 45%;
+    --sidebar-primary-foreground: 220 20% 8%;
+    --sidebar-accent: 220 15% 16%;
+    --sidebar-accent-foreground: 210 20% 85%;
+    --sidebar-border: 220 15% 18%;
+    --sidebar-ring: 160 80% 45%;
+
+    /* Custom tokens */
+    --surface: 220 18% 14%;
+    --surface-hover: 220 15% 18%;
+    --glow-primary: 160 80% 45%;
+    --glow-accent: 200 85% 55%;
+    --warning: 40 90% 55%;
+    --warning-foreground: 220 20% 8%;
+    --grid-cell: 160 80% 45%;
+    --grid-cell-border: 160 60% 30%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+}
+
+@layer utilities {
+  .glow-primary {
+    box-shadow: 0 0 20px hsl(var(--glow-primary) / 0.15),
+                0 0 60px hsl(var(--glow-primary) / 0.05);
+  }
+
+  .glow-accent {
+    box-shadow: 0 0 20px hsl(var(--glow-accent) / 0.15),
+                0 0 60px hsl(var(--glow-accent) / 0.05);
+  }
+
+  .text-gradient {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--accent)));
+  }
+
+  .surface-glass {
+    @apply bg-card/80 backdrop-blur-md border border-border;
+  }
+
+  .grid-cell {
+    @apply border border-[hsl(var(--grid-cell-border))] bg-[hsl(var(--grid-cell)/0.1)];
+  }
+
+  .grid-cell-selected {
+    @apply border border-[hsl(var(--grid-cell))] bg-[hsl(var(--grid-cell)/0.2)];
+  }
+}
