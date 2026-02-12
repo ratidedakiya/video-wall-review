@@ -63,7 +63,7 @@ export default function VisualGrid({ config, cabinet, unit }: VisualGridProps) {
         <span>Ratio: <span className="text-foreground">{(totalWidth / totalHeight).toFixed(3)}</span></span>
       </div>
      {/* Row / Column controls */}
-      {/* <div className="flex gap-6">
+       <div className="flex gap-6">
         <div className="flex items-center gap-2">
           <span className="text-xs font-mono text-muted-foreground">Columns:</span>
           <button
@@ -88,7 +88,7 @@ export default function VisualGrid({ config, cabinet, unit }: VisualGridProps) {
             className="w-7 h-7 rounded border border-border bg-muted text-foreground font-mono text-sm hover:border-primary transition-colors"
           >+</button>
         </div>
-      </div>  */}
+      </div> 
 
       {/* Grid visual */}
       <div className="flex justify-center py-4">
